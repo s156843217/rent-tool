@@ -188,7 +188,11 @@
   @media print{
     .site-nav,.hero,#formArea,.action-bar,footer,.print-tip,.toast{display:none !important}
     #contract{display:block !important}
-    .contract-doc{box-shadow:none;border:none;border-radius:0;margin:0;max-width:none;padding:0}
+    /* 手機「存成 PDF」會強制印出背景色，全站米色底（--bg）會在白色合約卡片周圍形成像邊框的色塊；
+       桌機列印預設不印背景故無此問題。強制白底＋移除卡片陰影/邊框，讓留白區與白卡融為一體。 */
+    html,body{background:#fff !important}
+    .contract-doc{box-shadow:none !important;border:none !important;border-radius:0 !important;
+      margin:0 !important;max-width:none !important;padding:0 !important;background:#fff !important}
     @page{size:A4;margin:1.8cm 1.6cm}
   }
 </style>
